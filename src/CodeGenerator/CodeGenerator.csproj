@@ -5,4 +5,12 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Content Remove="FADataDump/fa-regular-dump.dat" />
+    <Content Remove="FADataDump/fa-solid-dump.dat" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="FADataDump/fa-regular-dump.dat" />
+    <EmbeddedResource Include="FADataDump/fa-solid-dump.dat" />
+  </ItemGroup>
 </Project>

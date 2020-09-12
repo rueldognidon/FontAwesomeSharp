@@ -1,4 +1,6 @@
 ﻿using System;
+using System.IO;
+using System.Reflection;
 
 namespace CodeGenerator
 {
@@ -6,7 +8,9 @@ namespace CodeGenerator
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            var solidContent = FileContent.GetSolidData();
+
+            Console.WriteLine(solidContent);
         }
     }
 }
