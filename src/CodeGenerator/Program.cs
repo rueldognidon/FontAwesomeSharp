@@ -8,9 +8,14 @@ namespace CodeGenerator
     {
         static void Main(string[] args)
         {
-            var solidContent = FileContent.GetSolidData();
+            var solidContent = FileContent.GetRegularData();
 
-            Console.WriteLine(solidContent);
+            var fieldData = FontAwesomeMap.GetNameValuePair(solidContent);
+
+            foreach(var field in fieldData){
+                Console.WriteLine($"public static readonly FontAwesomeSolidIcon {field.Key} = \"\\u{field.Value.ToUpper()}\";");
+            }
         }
     }
+
 }

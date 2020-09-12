@@ -6,7 +6,7 @@ namespace CodeGenerator{
     public class FontAwesomeMap{
         public static Dictionary<string, string> GetNameValuePair(string content){
 
-            var items = content.Split("\n").ToList();
+            var items = content.Split("\r\n").ToList();
             
             var fieldNames = items.Where((c, i) => i % 2 == 0).Select(ReformatName).ToArray();
             var fieldValues = items.Where((c, i) => i % 2 != 0).ToArray();
@@ -16,7 +16,7 @@ namespace CodeGenerator{
             var result = new Dictionary<string, string>();
             var ctr = 0;
             foreach(var item in fieldNames){
-                result.Add(item, fieldNames[ctr]);
+                result.Add(item, fieldValues[ctr]);
                 ctr++;
             }
             return result;

@@ -1,3 +1,4 @@
+using System;
 using System.Diagnostics;
 using CodeGenerator;
 using NUnit.Framework;
@@ -10,6 +11,7 @@ namespace CodeGeneratorTests{
             var result = FileContent.GetSolidData();
             Debug.WriteLine(result);
             result.Length.ShouldBeGreaterThan(0);
+            Console.WriteLine(result);
         }
 
         [Test]
